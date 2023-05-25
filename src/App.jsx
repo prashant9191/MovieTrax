@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { fetchDataFromApi } from "./utils/api";
 import { useSelector, useDispatch } from "react-redux";
 import { getApiConfiguration } from "./store/homeSlice";
@@ -15,20 +16,27 @@ import PageNotFound from "./pages/404/PageNotFound";
 
 function App() {
   const dispatch = useDispatch();
-  const {url}=useSelector((state)=>state.home)
+  const { url } = useSelector((state) => state.home);
   useEffect(() => {
     api();
   }, []);
   const api = () => {
     fetchDataFromApi("/movie/popular").then((res) => {
       console.log(res);
-      dispatch(getApiConfiguration(res))
+      dispatch(getApiConfiguration(res));
     });
   };
-  return <div className="App">
-
-
-  </div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/:mediaType/:id" element={<Details/>} />
+        <Route path="/search/:query" element={<SearchReasult />} />
+        <Route path="/explore/:mediaType" element={<Explore />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
