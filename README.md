@@ -26,7 +26,7 @@ This project is deployed on vercel here - [MovieTrax](https://movie-trax.vercel.
 ### Pages & Features 👇
 
 - `Responsive Design` : This website is fully responsive from phone to Laptop and bigger screens as well.
-- `Home Page`: Nav Bar with dropdowns, dayanmic banner, carousels, search bar, Header, Footer  & slider .
+- `Home Page`: Nav Bar with dropdowns, Dynamic  banner, carousels, search bar, Header, Footer  & slider .
 - `Details-Page`: Clicked movie details are shown on this page with recommendations, similar movies , videos related to movie.
 - `Explore-Page`: User Clicked dayanmic either movies or tv-shows page to choose from.
 - `Search-Result-Page` : User's Searched movies/tv-shows results displayed  
