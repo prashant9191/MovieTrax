@@ -1,8 +1,8 @@
 import React from "react";
 import {
-    FaFacebookF,
+    FaGithub,
     FaInstagram,
-    FaTwitter,
+    FaEdge,
     FaLinkedin,
 } from "react-icons/fa";
 
@@ -11,6 +11,10 @@ import ContentWrapper from "../contentWrapper/ContentWrapper";
 import "./style.scss";
 
 const Footer = () => {
+    const openLinkInNewTab = (link) => {
+        window.open(link, "_blank");
+    };
+
     return (
         <footer className="footer">
             <ContentWrapper>
@@ -22,24 +26,22 @@ const Footer = () => {
                     <li className="menuItem">FAQ</li>
                 </ul>
                 <div className="infoText">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
+                    MovieTrax is your ultimate destination for all things movies and TV shows. With its extensive collection of information, trailers, and videos, you can easily explore and discover your favorite films and TV series, getting a comprehensive glimpse into each title before deciding what to watch next.
+                    <br />
+                    <br />
+                    ↓ Built and Designed By:- Prashant Verma ↓
                 </div>
                 <div className="socialIcons">
-                    <span className="icon">
-                        <FaFacebookF />
-                    </span>
-                    <span className="icon">
+                    <span className="icon" onClick={() => openLinkInNewTab("https://www.instagram.com/hellracerprashant")}>
                         <FaInstagram />
                     </span>
-                    <span className="icon">
-                        <FaTwitter />
+                    <span className="icon" onClick={() => openLinkInNewTab("https://github.com/prashant9191")}>
+                        <FaGithub />
                     </span>
-                    <span className="icon">
+                    <span className="icon" onClick={() => openLinkInNewTab("https://prashant9191.github.io/")}>
+                        <FaEdge />
+                    </span>
+                    <span className="icon" onClick={() => openLinkInNewTab("https://www.linkedin.com/in/prashant-verma-b44738178/")}>
                         <FaLinkedin />
                     </span>
                 </div>
